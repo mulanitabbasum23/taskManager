@@ -1,0 +1,24 @@
+<p>viewtask works!</p>
+<div>
+  <div>
+    <button class="btn btn-success" (click)="addTask()">Add task</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Task Name</th>
+        <th>Due Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{task.title}}</td>
+        <td>{{task.dueDate | date}}</td>
+        <!-- <td class="text-success">Completed</td> -->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off" #toggledata>
+        <label class="btn btn-outline-primary" (click)="toggle(toggledata)" for="btn-check-outlined">Single toggle</label><br>
+      </tr>
+    </tbody>
+  </table>
+</div>
